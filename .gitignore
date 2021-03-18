@@ -1,0 +1,5 @@
+*.c
+.DS_store
+calc
+scanner
+

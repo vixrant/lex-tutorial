@@ -1,0 +1,16 @@
+ADD 5;
+PRINT;
+
+* 4;
+PRINT;
+/ -2;
+ADD 7;
+PRINT;
+
+sub 13;
+print;
+
+clear;
+print;
+EXIT;
+
