@@ -16,9 +16,9 @@ Hence, we have <ID, "x">, <INT, 5>
 
 ### Lexer as DFA
 
-![Lexical Analysis as a DFA](./imgs/dfa.jpg){#fig:dfa height="4cm"}
+![Lexical Analysis as a DFA](./imgs/dfa.jpg)
 
-Problem Writing so much logic is very tedious and unmaintainable in
+**Problem:** Writing so much logic is very tedious and unmaintainable in
 code!
 
 # Lex/ Flex
@@ -57,12 +57,12 @@ It is not a framework or a library, it writes the code for you
 
 These 4 lines generate 1734 lines of C code!
 
-%% Sections The %% is important because it marks the start of Rules
+**%% Sections:** The %% is important because it marks the start of Rules
 sections
 
-![Regex pattern primitives](imgs/regex.png){#fig:regex height="4cm"}
+![Regex pattern primitives](imgs/regex.png)
 
-yytext yytext is a global variable that stores the text of the lexeme
+**yytext:**yytext is a global variable that stores the text of the lexeme
 matched by regex.
 
 ### Using flex
@@ -92,7 +92,7 @@ Pass in a file's text:
     {ID}            printf("Identifier: %s \n", yytext);
     \n              printf("New line \n");
 
-%% Sections The section above %% is Declarations section with C code,
+**%% Sections:** The section above %% is Declarations section with C code,
 declarations (DIGIT, ID), and other configurations.
 
 ## Example 3
@@ -119,13 +119,13 @@ char **argv;
 }
 ```
 
-%% Sections An optional user code section can be added after the rules.
+**%% Sections:** An optional user code section can be added after the rules.
 This section is copied verbatim, i.e. directly into the generated code.
 
-yyin File to be processed. Set it to a readable file pointer. Default is
+**yyin:** File to be processed. Set it to a readable file pointer. Default is
 stdin i.e. command line input.
 
-yylex Continuously lexically analyse a file. If you return something, it
+**yylex:** Continuously lexically analyse a file. If you return something, it
 will pause execution and start again if you call it again. You can
 change the return type by modifying YYDECL macro (advanced).
 
@@ -153,13 +153,12 @@ change the return type by modifying YYDECL macro (advanced).
 
 Where $[ block ]$ means optional
 
-Standard structure This structure is used in all Lex implementations.
+**Standard structure:** This structure is used in all Lex implementations.
 Yacc and its implementations also uses same structure!
 
 ## Variables
 
-![Predefined global variables](imgs/vars.png){#fig:variables
-height="5cm"}
+![Predefined global variables](imgs/vars.png)
 
 # More examples
 
@@ -191,15 +190,14 @@ EXIT;
 
 ### Yacc - Parser Generator
 
-![Lexer to Parser pipeline](imgs/parsingpipeline.png){#fig:parser
-height="5cm"}
+![Lexer to Parser pipeline](imgs/parsingpipeline.png)
 
 ### Integrating Yacc/Bison with Lex/Flex
 
 ![Steps to compile Lex and Yacc/ Flex and
-Bison](imgs/yacc.png){#fig:yacc width="75%"}
+Bison](imgs/yacc.png)
 
-yylval yylval, defined in $.tab.c$, is used to store data related to
+**yylval:** yylval, defined in $.tab.c$, is used to store data related to
 tokens (value from $<token, value>$). It's datatype is defined using
 YYSTYPE macro and is usually defined using Yacc/ Bison.
 
@@ -212,13 +210,13 @@ YYSTYPE macro and is usually defined using Yacc/ Bison.
         2 * (3.1427 / 3)
         1.1 + 2 - 3 * 4 / 5.
 
-Is based on
+is based on
 
         E -> E + E | E - E | T
         T -> T * F | T / F | F
         F -> ( E ) | num | id
 
-Code is generated using Yacc/ Bison
+Code is generated using Yacc/ Bison.
 
 # D.I.Y.
 
