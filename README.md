@@ -1,7 +1,7 @@
 Converted from doc.tex.
 
 This is a tutorial to Lex, with quick introduction to Yacc, presented to my juniors for their
-Systems Programming and Compiler Construction course.
+Systems Programming and Compiler Construction course. Presented on 25/Mar/2021.
 
 # Lexical Analysis
 
