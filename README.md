@@ -1,3 +1,8 @@
+Converted from doc.tex.
+
+This is a tutorial to Lex, with quick introduction to Yacc, presented to my juniors for their
+Systems Programming and Compiler Construction course.
+
 # Lexical Analysis
 
 ### Lexical Analysis
