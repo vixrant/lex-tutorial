@@ -2,17 +2,17 @@
 
 ### Lexical Analysis
 
-![Lexer operation](./imgs/lexer.png){#fig:lexer width="\\textwidth"}
+![Lexer operation](./imgs/lexer.png)
 
 ### Lexical Analysis
 
-$$<token, value>$$
+<token, value>
 
 -   token = unique integer value, e.g. ID = 1, INT = 2
 
 -   value (optional) = data related to token, e.g. "x", 5
 
-Hence, we have $<ID, ``x">$, $<INT, 5>$
+Hence, we have <ID, "x">, <INT, 5>
 
 ### Lexical Analysis
 
@@ -49,8 +49,6 @@ It is not a framework or a library, it writes the code for you
 
 ## Example 1
 
-### Generating code
-
     %%
 
     [0-9]           printf("Digit: %s \n", yytext);
@@ -61,8 +59,6 @@ These 4 lines generate 1734 lines of C code!
 
 %% Sections The %% is important because it marks the start of Rules
 sections
-
-### Example 1
 
 ![Regex pattern primitives](imgs/regex.png){#fig:regex height="4cm"}
 
@@ -86,8 +82,6 @@ Pass in a file's text:
 
 ## Example 2
 
-### Example 2
-
     DIGIT    [0-9]
     ID       [a-zA-Z][a-zA-Z0-9]*
 
@@ -102,8 +96,6 @@ Pass in a file's text:
 declarations (DIGIT, ID), and other configurations.
 
 ## Example 3
-
-### Example 3
 
 ``` {.c basicstyle="\\tiny" language="c"}
 ... declarations
@@ -130,8 +122,6 @@ char **argv;
 %% Sections An optional user code section can be added after the rules.
 This section is copied verbatim, i.e. directly into the generated code.
 
-### Example 3
-
 yyin File to be processed. Set it to a readable file pointer. Default is
 stdin i.e. command line input.
 
@@ -142,8 +132,6 @@ change the return type by modifying YYDECL macro (advanced).
 # Summary
 
 ## Code structure
-
-### Syntax
 
 ``` {basicstyle="\\tiny"}
 [
@@ -169,8 +157,6 @@ Standard structure This structure is used in all Lex implementations.
 Yacc and its implementations also uses same structure!
 
 ## Variables
-
-### yyVariables
 
 ![Predefined global variables](imgs/vars.png){#fig:variables
 height="5cm"}
@@ -203,14 +189,10 @@ EXIT;
 
 ## Yacc/ Bison
 
-### Parsing
-
 ### Yacc - Parser Generator
 
 ![Lexer to Parser pipeline](imgs/parsingpipeline.png){#fig:parser
 height="5cm"}
-
-### Integration
 
 ### Integrating Yacc/Bison with Lex/Flex
 
@@ -240,8 +222,6 @@ Code is generated using Yacc/ Bison
 
 # D.I.Y.
 
-### Experiment yourself
-
 -   CSV parser using Flex
 
 -   HTML/ XML parser using Flex
@@ -255,3 +235,13 @@ Code is generated using Yacc/ Bison
 -   Use C++ and multiple files, explore the option flags
 
 # References
+
+[1] Tom Niemann. Lex yacc tutorial. URL https://cse.iitkgp.ac.in/~bivasm/notes/LexAndYaccTutorial.pdf.
+
+[2] John Millaway Vern Paxson, Will Estes. Lexical analysis with flex. 2012. URL https://www.iith.ac.in/~ramakrishna/Compilers- Aug14/doc/flex.pdf.
+
+[3] Keith Schwarz Julie Zelenski. flex in a nutshell. 2012. URL https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/050%20Flex%20In%20A%20Nutshell.pdf.
+
+[4] Lan Gao. Flex tutorial. URL http://alumni.cs.ucr.edu/~lgao/teaching/flex.html.
+
+[5] Flex. The flex manual page. 2021. URL http://dinosaur.compilertools.net/flex/manpage.html.
